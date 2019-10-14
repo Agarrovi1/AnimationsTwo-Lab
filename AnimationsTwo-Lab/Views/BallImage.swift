@@ -14,16 +14,22 @@ class BallImage: UIView {
     func setImage() {
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = #imageLiteral(resourceName: "rainbowBall")
+        imageView.frame = self.frame
         imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        imageView.image = #imageLiteral(resourceName: "rainbowBall")
     }
 
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        setImage()
+        super.init(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = self.frame.height / 2
+        setImage()
+
     }
     
     required init?(coder: NSCoder) {

@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: - Properties
     lazy var linearBall = BallImage()
     lazy var easeInBall = BallImage()
     lazy var easeOutBall = BallImage()
@@ -62,6 +63,10 @@ class ViewController: UIViewController {
         setupEaseInButton()
         setupEaseOutButton()
         setupEaseInOutButton()
+        setUp(ball: linearBall, to: linearButton)
+        setUp(ball: easeInBall, to: easeInButton)
+        setUp(ball: easeOutBall, to: easeOutButton)
+        setUp(ball: easeInOutBall, to: easeInOutButton)
     }
     private func setupLinearButton() {
         view.addSubview(linearButton)
@@ -83,11 +88,21 @@ class ViewController: UIViewController {
         easeInOutButton.leadingAnchor.constraint(equalTo: easeOutButton.trailingAnchor, constant: 40).isActive = true
         easeInOutButton.topAnchor.constraint(equalTo: linearButton.topAnchor).isActive = true
     }
+    
+    private func setUp(ball: UIView, to button: UIButton) {
+        view.addSubview(ball)
+        ball.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        ball.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20).isActive = true
+        ball.heightAnchor.constraint(equalToConstant: ball.frame.height).isActive = true
+        ball.widthAnchor.constraint(equalToConstant: ball.frame.width).isActive = true
+    }
 
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
+        print(linearBall.imageView.bounds)
     }
 
 
