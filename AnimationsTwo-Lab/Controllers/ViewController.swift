@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         button.setTitle("Linear", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tag = 0
+        button.addTarget(self, action: #selector(animateOptionButtonsPressed(sender:)), for: .touchUpInside)
         return button
     }()
     lazy var easeInButton: UIButton = {
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
         button.setTitle("EaseIn", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tag = 1
+        button.addTarget(self, action: #selector(animateOptionButtonsPressed(sender:)), for: .touchUpInside)
         return button
     }()
     lazy var easeOutButton: UIButton = {
@@ -36,6 +40,8 @@ class ViewController: UIViewController {
         button.setTitle("EaseOut", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tag = 2
+        button.addTarget(self, action: #selector(animateOptionButtonsPressed(sender:)), for: .touchUpInside)
         return button
     }()
     lazy var easeInOutButton: UIButton = {
@@ -43,6 +49,8 @@ class ViewController: UIViewController {
         button.setTitle("EaseInOut", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tag = 3
+        button.addTarget(self, action: #selector(animateOptionButtonsPressed(sender:)), for: .touchUpInside)
         return button
     }()
     lazy var resetButton: UIButton = {
@@ -135,7 +143,17 @@ class ViewController: UIViewController {
             self.animate(ball: self.easeInBall, animateOption: .curveEaseIn)
             self.animate(ball: self.easeOutBall, animateOption: .curveEaseOut)
             self.animate(ball: self.easeInOutBall, animateOption: .curveEaseInOut)
-     
+    }
+    @objc func animateOptionButtonsPressed(sender: UIButton) {
+        if sender.tag == 0 {
+            linearBall.isHidden = linearBall.isHidden == true ? false : true
+        } else if sender.tag == 1 {
+            easeInBall.isHidden = easeInBall.isHidden == true ? false : true
+        } else if sender.tag == 2 {
+            easeOutBall.isHidden = easeOutBall.isHidden == true ? false : true
+        } else if sender.tag == 3 {
+            easeInOutBall.isHidden = easeInOutBall.isHidden == true ? false : true
+        }
     }
 
     //MARK: - LifeCycle
