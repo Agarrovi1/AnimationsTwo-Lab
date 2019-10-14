@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     lazy var easeOutBall = BallImage()
     lazy var easeInOutBall = BallImage()
     
+    var linearBallOrigin = CGPoint()
+    var easeInBallOrigin = CGPoint()
+    var easeOutBallOrigin = CGPoint()
+    var easeInOutBallOrigin = CGPoint()
+    
     lazy var linearButton: UIButton = {
         let button = UIButton()
         button.setTitle("Linear", for: .normal)
@@ -63,10 +68,21 @@ class ViewController: UIViewController {
         setupEaseInButton()
         setupEaseOutButton()
         setupEaseInOutButton()
+        
         setUp(ball: linearBall, to: linearButton)
+        linearBallOrigin = linearBall.center
+        
         setUp(ball: easeInBall, to: easeInButton)
+        easeInBallOrigin = easeInBall.center
+        
         setUp(ball: easeOutBall, to: easeOutButton)
+        easeOutBallOrigin = easeOutBall.center
+        
         setUp(ball: easeInOutBall, to: easeInOutButton)
+        easeInOutBallOrigin = easeInBall.center
+        
+        setupResetButton()
+        setupAnimateButton()
     }
     private func setupLinearButton() {
         view.addSubview(linearButton)
@@ -95,6 +111,16 @@ class ViewController: UIViewController {
         ball.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20).isActive = true
         ball.heightAnchor.constraint(equalToConstant: ball.frame.height).isActive = true
         ball.widthAnchor.constraint(equalToConstant: ball.frame.width).isActive = true
+    }
+    private func setupResetButton() {
+        view.addSubview(resetButton)
+        resetButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20).isActive = true
+        resetButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    private func setupAnimateButton() {
+        view.addSubview(animateButton)
+        animateButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20).isActive = true
+        animateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 
     //MARK: - LifeCycle
