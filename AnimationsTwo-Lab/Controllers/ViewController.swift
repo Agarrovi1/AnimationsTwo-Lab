@@ -161,7 +161,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
-        print(linearBall.imageView.bounds)
     }
 
 
