@@ -14,6 +14,7 @@
 		4DFE46A52354C8CE007671E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE46A42354C8CE007671E6 /* Assets.xcassets */; };
 		4DFE46A82354C8CE007671E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE46A62354C8CE007671E6 /* LaunchScreen.storyboard */; };
 		4DFE46B32354C8CE007671E6 /* AnimationsTwo_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE46B22354C8CE007671E6 /* AnimationsTwo_LabTests.swift */; };
+		4DFE46C22354DCAC007671E6 /* BallImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE46C12354DCAC007671E6 /* BallImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4DFE46AE2354C8CE007671E6 /* AnimationsTwo-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AnimationsTwo-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFE46B22354C8CE007671E6 /* AnimationsTwo_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsTwo_LabTests.swift; sourceTree = "<group>"; };
 		4DFE46B42354C8CE007671E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DFE46C12354DCAC007671E6 /* BallImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +81,12 @@
 		4DFE469A2354C8CD007671E6 /* AnimationsTwo-Lab */ = {
 			isa = PBXGroup;
 			children = (
+				4DFE469D2354C8CD007671E6 /* SceneDelegate.swift */,
+				4DFE469B2354C8CD007671E6 /* AppDelegate.swift */,
+				4DFE46A62354C8CE007671E6 /* LaunchScreen.storyboard */,
 				4DFE46C02354D333007671E6 /* Models */,
 				4DFE46BF2354D32A007671E6 /* Views */,
 				4DFE46BE2354D31F007671E6 /* Controllers */,
-				4DFE46BD2354D311007671E6 /* Supporting Files */,
 				4DFE46A12354C8CD007671E6 /* Main.storyboard */,
 				4DFE46A42354C8CE007671E6 /* Assets.xcassets */,
 				4DFE46A92354C8CE007671E6 /* Info.plist */,
@@ -99,16 +103,6 @@
 			path = "AnimationsTwo-LabTests";
 			sourceTree = "<group>";
 		};
-		4DFE46BD2354D311007671E6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4DFE469B2354C8CD007671E6 /* AppDelegate.swift */,
-				4DFE469D2354C8CD007671E6 /* SceneDelegate.swift */,
-				4DFE46A62354C8CE007671E6 /* LaunchScreen.storyboard */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		4DFE46BE2354D31F007671E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +114,7 @@
 		4DFE46BF2354D32A007671E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4DFE46C12354DCAC007671E6 /* BallImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFE46C22354DCAC007671E6 /* BallImage.swift in Sources */,
 				4DFE46A02354C8CD007671E6 /* ViewController.swift in Sources */,
 				4DFE469C2354C8CD007671E6 /* AppDelegate.swift in Sources */,
 				4DFE469E2354C8CD007671E6 /* SceneDelegate.swift in Sources */,
