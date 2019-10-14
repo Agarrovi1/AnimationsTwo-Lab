@@ -9,58 +9,85 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var linearBall = BallImage()
-    var easeInBall = BallImage()
-    var easeOutBall = BallImage()
-    var easeInOutBall = BallImage()
+    lazy var linearBall = BallImage()
+    lazy var easeInBall = BallImage()
+    lazy var easeOutBall = BallImage()
+    lazy var easeInOutBall = BallImage()
     
-    var linearButton: UIButton = {
+    lazy var linearButton: UIButton = {
         let button = UIButton()
         button.setTitle("Linear", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    var easeInButton: UIButton = {
+    lazy var easeInButton: UIButton = {
         let button = UIButton()
         button.setTitle("EaseIn", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    var easeOutButton: UIButton = {
+    lazy var easeOutButton: UIButton = {
         let button = UIButton()
         button.setTitle("EaseOut", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    var easeInOutButton: UIButton = {
+    lazy var easeInOutButton: UIButton = {
         let button = UIButton()
         button.setTitle("EaseInOut", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    var resetButton: UIButton = {
+    lazy var resetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Reset", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    var animateButton: UIButton = {
+    lazy var animateButton: UIButton = {
         let button = UIButton()
         button.setTitle("Animate", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+    //MARK: - Constraint Functions
+    private func setupUI() {
+        setupLinearButton()
+        setupEaseInButton()
+        setupEaseOutButton()
+        setupEaseInOutButton()
+    }
+    private func setupLinearButton() {
+        view.addSubview(linearButton)
+        linearButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20).isActive = true
+        linearButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: 50).isActive = true
+    }
+    private func setupEaseInButton() {
+        view.addSubview(easeInButton)
+        easeInButton.leadingAnchor.constraint(equalTo: linearButton.trailingAnchor, constant: 40).isActive = true
+        easeInButton.topAnchor.constraint(equalTo: linearButton.topAnchor).isActive = true
+    }
+    private func setupEaseOutButton() {
+        view.addSubview(easeOutButton)
+        easeOutButton.leadingAnchor.constraint(equalTo: easeInButton.trailingAnchor, constant: 40).isActive = true
+        easeOutButton.topAnchor.constraint(equalTo: linearButton.topAnchor).isActive = true
+    }
+    private func setupEaseInOutButton() {
+        view.addSubview(easeInOutButton)
+        easeInOutButton.leadingAnchor.constraint(equalTo: easeOutButton.trailingAnchor, constant: 40).isActive = true
+        easeInOutButton.topAnchor.constraint(equalTo: linearButton.topAnchor).isActive = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setupUI()
     }
 
 
